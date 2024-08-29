@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Pressure Monitor App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Blood Pressure Monitor</h1>
+
+    <form id="bpForm">
+        <label for="systolic">Systolic (mm Hg):</label>
+        <input type="number" id="systolic" required>
+
+        <label for="diastolic">Diastolic (mm Hg):</label>
+        <input type="number" id="diastolic" required>
+
+        <label for="datetime">Date and Time:</label>
+        <input type="datetime-local" id="datetime" required>
+
+        <button type="submit">Add Reading</button>
+    </form>
+
+    <h2>Previous Readings</h2>
+    <table id="readingsTable">
+        <thead>
+            <tr>
+                <th>Date and Time</th>
+                <th>Systolic (mm Hg)</th>
+                <th>Diastolic (mm Hg)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Readings will be appended here by JS -->
+        </tbody>
+    </table>
+
+    <div class="stats">
+        <h3>Statistics</h3>
+        <p>Average Systolic: <span id="avgSystolic">N/A</span></p>
+        <p>Average Diastolic: <span id="avgDiastolic">N/A</span></p>
+        <p>Highest Systolic: <span id="maxSystolic">N/A</span></p>
+        <p>Lowest Systolic: <span id="minSystolic">N/A</span></p>
+        <p>Highest Diastolic: <span id="maxDiastolic">N/A</span></p>
+        <p>Lowest Diastolic: <span id="minDiastolic">N/A</span></p>
+    </div>
+
+    <div id="chartContainer">
+        <canvas id="bpChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
