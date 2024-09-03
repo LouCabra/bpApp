@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Pressure Monitor App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="welcomePrompt" class="prompt">
+        <h2>Welcome to Blood Pressure Monitor</h2>
+        <button id="login-btn">Login</button>
+        <button id="create-user-btn">Create User</button>
+    </div>
+
+     <!-- Login Form (initially hidden) -->
+     <div id="loginForm" class="form hidden">
+        <h3>Login</h3>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button id="submitLogin">Login</button>
+        <button id="backToWelcome">Back</button>
+    </div>
+
+    <!-- Create User Form (initially hidden) -->
+    <div id="createUserForm" class="form hidden">
+        <h3>Create User</h3>
+        <input type="text" id="newUsername" placeholder="New Username" required>
+        <input type="password" id="newPassword" placeholder="New Password" required>
+        <button id="submitCreateUser">Create User</button>
+        <button id="backToWelcome">Back</button>
+    </div>
+
+    <div id="mainApp" class="hidden">
+    <h1>Blood Pressure Monitor</h1>
+     </div>
+        
+    <form id="bpForm">
+        <label for="systolic">Systolic (mm Hg):</label>
+        <input type="number" id="systolic" required>
+
+        <label for="diastolic">Diastolic (mm Hg):</label>
+        <input type="number" id="diastolic" required>
+
+        <label for="datetime">Date and Time:</label>
+        <input type="datetime-local" id="datetime" required>
+
+        <button type="submit">Add Reading</button>
+    </form>
+
+    <h2>Previous Readings</h2>
+    <table id="readingsTable">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Systolic (mm Hg)</th>
+                <th>Diastolic (mm Hg)</th>
+            </tr>
+        </thead>
+       
+    </table>
+
+    <div class="stats">
+        <h3>Statistics</h3>
+        <p>Average Systolic: <span id="avgSystolic">N/A</span></p>
+        <p>Average Diastolic: <span id="avgDiastolic">N/A</span></p>
+        <p>Highest Systolic: <span id="maxSystolic">N/A</span></p>
+        <p>Lowest Systolic: <span id="minSystolic">N/A</span></p>
+        <p>Highest Diastolic: <span id="maxDiastolic">N/A</span></p>
+        <p>Lowest Diastolic: <span id="minDiastolic">N/A</span></p>
+    </div>
+
+    <div id="chartContainer">
+        <canvas id="bpChart"></canvas>
+    </div>
+
+ 
+    <script src="script.js"></script>
+</body>
+</html>
