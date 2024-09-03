@@ -3,11 +3,6 @@
 ## Overview
 The Blood Pressure Monitor App is a simple web application that allows users to track their blood pressure readings over time. The app enables manual data entry of systolic and diastolic values along with the date and time of each reading. It stores these readings locally on the user's device and provides basic statistical analysis and visualizations.
 
-## Basic Functionality
-
-### Difficulty
-**Easy to Moderate**
-
 ### Description
 This app is designed to help users monitor their blood pressure by allowing them to manually input readings and track their progress over time. The app displays the entered readings in a list and calculates basic statistics such as the average, highest, and lowest blood pressure readings. It also includes simple visualizations to show trends over time.
 
@@ -40,6 +35,5 @@ This app is designed to help users monitor their blood pressure by allowing them
 2. **Future Enhancements**: Included ideas for future improvements, such as filtering, sorting, data export, and user authentication, to suggest how the app could be expanded upon.
 3. **License**: Added a section on licensing to clarify the usage rights of the code. 
 
-This `README.md` file provides a clear and concise overview of the app, its functionality, and how to use it. It also suggests potential areas for future development.
 
 
