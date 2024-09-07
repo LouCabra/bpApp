@@ -21,6 +21,53 @@ document.addEventListener("DOMContentLoaded", () => {
       createUserForm.classList.remove('hidden');
   });
 
+//Create user phase 
+
+document.getElementById('submitCreateUser').addEventListener('click', () => {
+    const newUserName = document.getElementById.('newUserName').value; 
+    const newPassword = document.getElementById.('newPassword').value; 
+
+    if (newUsername && newPassword) {
+ // Create a new user object 
+    const  newUser = { user: newUserName, password: newPassword };
+
+    // Get existing users from local Storage  
+    let users = JSON.parse(localStorage.getItem('users')) || []; 
+
+    // Check if the username already exists 
+    const existingUser = users.find(user => user.user ===newUserName); 
+    if (existingUser) {
+        alert('Username already exists!');
+        return;
+    }
+    // Add the new user to the array and save it back to localStorage 
+    users.push(newUser); 
+    localStorage.setItem('users', JSON.stringify(users)); 
+
+
+// listen for username/pass input
+
+  document.getElementById('submitlogin').addEventListener('click', () => {
+    const userName = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+  });
+
+  // Get users from localStorage 
+    let users = JSON.parse(localStorage.getItem('users')) || []; 
+
+    //Find the user 
+    const user = users.find(user => user.user === userName && user.password == password); 
+
+// Successful login
+
+if (user) { 
+    loginForm.classList.add('hidden');
+    mainApp.classList.remove('hidden');
+
+} else {
+    alert('Invalid username or password. Please check, and try again.')
+};
+
   // Back to Welcome Screen from Login Form
   document.getElementById('backToWelcome').addEventListener('click', () => {
       loginForm.classList.add('hidden');
@@ -48,21 +95,13 @@ document.addEventListener("DOMContentLoaded", () => {
       createUserForm.classList.add('hidden');
       mainApp.classList.remove('hidden');
   });
-});
-
-// User creation 
-
-function getUser 
-
-
-
 
 
 // Main app
 
 
 // Get form and table elements
-const bpForm = document.getElementById('bpForm');
+const bpForm = document.getElementById('bpForm'); 
 const readingsTable = document.getElementById('readingsTable').querySelector('tbody');
 
 // Array to store readings
@@ -113,50 +152,10 @@ function updateTable() {
 }
 
 // Function to calculate and update statistics
-function updateStatistics() {
+//function updateStatistics() {
     // Placeholder for your statistics calculations
     // This will calculate averages, highs, lows, etc.
-}
-
-
-
-
-
-
-
-// Event listener for DOMContentLoaded can be removed if not necessary
-// Alternatively, ensure it properly references IDs and elements
-
-
-
-/* basic button click skeleton 
-
-document.addEventListener("DOMContentLoaded", () => {
-    // Welcome screen buttons
-const bpForm = document.getElementById(bpform); 
-
-
-    document.getElementById("login-btn").addEventListener("click", () => {
-        alert("Login functionality coming soon!");
-        // Implement login functionality
-    });
-
-    document.getElementById("create-user-btn").addEventListener("click", () => {
-        alert("User creation functionality coming soon!");
-        // Implement user creation functionality
-    });
-
-    document.getElementById("guest-btn").addEventListener("click", () => {
-        alert("Guest mode coming soon!");
-        // Implement guest mode functionality
-    });
-
-    document.getElementById("settings-btn").addEventListener("click", () => {
-        alert("Settings menu coming soon!");
-        // Implement settings menu
-    });
-});
-*/
+//}
 
 
 
@@ -171,66 +170,6 @@ const bpForm = document.getElementById(bpform);
 
 
 
-
-/*
-Pseudocode for Blood Pressure Monitoring App
-
-1. User Input: Welcome Screen
-   - Display options: 
-     - Login
-     - Create User
-     - Use as Guest
-   - Display Settings option
-
-2. Check if User is Logged In:
-   -
-   
-   If user is logged in:
-     - Display last recorded BP
-     - Show option to record new BP
-       - User inputs systolic and diastolic values
-       - Present option to retake or save readings
-     - Display options:
-       - Show Graph (display historical BP data)
-       - View Log (detailed list of past readings)
-       - Set Reminder (schedule regular BP checks)
-     - Display Settings options:
-       - Change Profile (edit user details)
-       - Change Notification Preferences (update reminder settings)
-       - Logout
-
-   - If user is not logged in:
-     - Display options:
-       - Sign Up (create a new user account)
-       - Use as Guest (limited features)
-
-3. Sign-Up Process:
-   - Create a new user account
-   - Redirect to logged-in user interface
-
-4. Guest Mode:
-   - Allow user to input BP readings
-   - Save data locally without account creation
-   - Limited access to advanced features (e.g., no reminders or profile management)
-
-5. Settings Menu:
-   - Accessible from both logged-in and guest modes
-   - Options:
-     - Change App Theme
-     - Adjust Notification Settings
-     - Access Help/Support
-     - About the App
-
-6. Error Handling:
-   - If input values are invalid (e.g., non-numeric BP readings):
-     - Display error message and prompt for re-entry
-
-7. Data Persistence:
-   - For logged-in users:
-     - Save data to user account (possibly on a server or cloud service)
-   - For guests:
-     - Save data locally on the device (using LocalStorage or IndexedDB)
-*/
 
 
 
