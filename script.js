@@ -50,6 +50,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// User creation 
+
+function getUser 
+
+
+
+
 
 // Main app
 
